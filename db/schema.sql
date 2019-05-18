@@ -1,3 +1,5 @@
+-- project guide line have this file inside of the models folder, and does not have the table or a seeds file may need to move in the future
+
 DROP DATABASE IF EXISTS task_db;
 CREATE DATABASE task_db;
 
