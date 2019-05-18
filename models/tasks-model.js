@@ -1,46 +1,46 @@
 module.exports = function(sequelize, DataTypes) {
-  var Example = sequelize.define("tasks", {
-    id:{
+  var Task = sequelize.define("tasks", {
+    id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
       autoIncrement: true,
-      allowNull: false,
+      allowNull: false
     },
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      len: [1,30],
+      len: [1, 30]
     },
     zone: {
       type: DataTypes.STRING,
       allowNull: false,
-      len: [1,20],
+      len: [1, 20]
     },
-    unit_number:{
+    unitNumber: {
       type: DataTypes.STRING,
       allowNull: false,
-      len: [1,40],
+      len: [1, 40]
     },
-    problem:{
+    problem: {
       type: DataTypes.STRING,
       allowNull: false,
-      len: [1,25],
+      len: [1, 25]
     },
     note: {
       type: DataTypes.TEXT,
       allowNull: false,
-      len: [1,250],
+      len: [1, 250]
     },
     completed: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      DEFAULTVALUE: false,
+      DEFAULTVALUE: false
     },
-    severity:{
+    severity: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      validate: { min: 1 , max: 10 } 
+      validate: { min: 1, max: 10 }
     }
   });
-  return Example;
+  return Task;
 };
