@@ -15,16 +15,103 @@
         crossorigin="anonymous"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="public/css/style.css">
-    <<script type="text/javascript" src="public/js/script.js"></script>
+    <link rel="stylesheet" source="../css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Our Project name here</title>
+    <title>Task Manager</title>
+    <h1>Task Manager</h1>
 </head>
+<!--BEGINS THE CARD FOR ACTIVE TASKS-->
 
 <body>
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Task Title</h5>
+                    <p class="card-text">Basic Task Information</p>
+                    <a href="#" class="btn btn-primary">Get More Info About Task</a>
+                </div>
+            </div>
+        </div>
+        <!--BEGINS THE CARD FOR COMPLETED TASKS-->
+        <div class="col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Task Title</h5>
+                    <p class="card-text">Basic Task Information</p>
+                    <a href="#" class="btn btn-primary">Get More Info About Task</a>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <br>
+    <!--Summary Of the zones that populates as the user selects options from "New Task"-->
+    <div id="wing">Create Your New Task Below.</div>
+
+    <br>
+    <!--Dropdown Menu for Creating New Task-->
+    <div class="btn-group dropright">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            New Task
+        </button>
+
+        <div class="dropdown-menu" id="wingDrop">
+
+            <button id="eastWing" value="1" class="dropdown-item">East Wing</button>
+            <button id="westWing" value="2" class="dropdown-item">West Wing</button>
+        </div>
+    </div>
+
+    <!-- DROPDONW MENU FOR AREA-->
+    <div class="btn-group dropright">
+
+        <div class="dropdown-menu" id="areaDrop">
+
+            <button id="bathroom" value="1" class="dropdown-item">Bathroom</button>
+            <button id="personalOffice" value="2" class="dropdown-item">Personal Office</button>
+            <button id="cubicleArea" value="3" class="dropdown-item">Cubicle Area</button>
+            <button id="lobbyOrReception" value="4" class="dropdown-item">Lobby / Reception</button>
+        </div>
+    </div>
+
+    <!-- DROPDONW MENU FOR issue-->
+    <div class="btn-group dropright" >
+
+        <div class="dropdown-menu" id="issueDrop">
+            <button id="HVAC" value="1" class="dropdown-item">HVAC</button>
+            <button id="plumbing" value="2" class="dropdown-item">Plumbing</button>
+            <button id="electrical" value="3" class="dropdown-item">Electrical</button>
+        </div>
+    </div>
+
+    <!--INPUT FIELD FOR NOTES REGARDING SPECIFICATION OF ISSUE AT HAND-->
+    <form id="notes">
+        <button id="submitNotes" type="button" class="btn btn-secondary">Submit Notes</button>
+        <div class="form-group">
+            <label for="formGroupExampleInput">Please Specify Issue (i.e. The sink is leaking. Max=150
+                Characters.)</label>
+            <input id="issueNotes" type="text" class="form-control" id="formGroupExampleInput" placeholder="Example input">
+        </div>
+    </form>
+
+    <!--DROPDOWN MENU REGARDING SEVERITY OF ISSUE-->
+    <div class="btn-group dropright" >
+
+            <div class="dropdown-menu" id="severityDrop">
+                <button id="one" value="1" class="dropdown-item">1</button>
+                <button id="two" value="2" class="dropdown-item">2</button>
+                <button id="three" value="3" class="dropdown-item">3</button>
+                <button id="four" value="4" class="dropdown-item">4</button>
+                <button id="five" value="5" class="dropdown-item">5</button>
+            </div>
+        </div>
+
+
+    <script type="text/javascript" src="../js/script.js"></script>
 </body>
 
 </html>
