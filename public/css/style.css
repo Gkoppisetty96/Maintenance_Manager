@@ -1,0 +1,53 @@
+body {
+    /* background-image: url("../images/plaid.png"); */
+    background-repeat: repeat;
+    height: 100%;
+    line-height: 1.5em;
+    color: #41414c;
+    /* font-family: 'Lato', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    color:inherit; 
+}
+
+a:hover {
+    color:inherit;
+    text-shadow: 0 0 10px #000000;
+}
+
+#everything-container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.navbar-brand {
+    color: #006666 !important;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+}
+
+.navbar-nav .nav-link {
+    color: #66b2b2;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #666666;
+    color: #8d8d8d;
+    height: 3em;
+    padding: 1em;
+    text-align: center;
+}
