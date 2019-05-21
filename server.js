@@ -1,7 +1,7 @@
 require("dotenv").config();
 var express = require("express");
 // var methodOverride = require('method-override');
-var exphbs = require("express-handlebars");
+// var exphbs = require("express-handlebars");
 var PORT = process.env.PORT || 8000;
 var app = express();
 var db = require("./models");
@@ -15,8 +15,8 @@ app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.engine("handlebars", exphbs({ defaultLayout: "main" }));
-app.set("view engine", "handlebars");
+// app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+// app.set("view engine", "handlebars");
 
 var syncOptions = { force: false };
 
