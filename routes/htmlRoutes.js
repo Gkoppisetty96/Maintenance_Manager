@@ -1,14 +1,20 @@
 var db = require("../models");
+var path = require("path");
 
 module.exports = function(app) {
-  // Load index page
+  // Load index page with handlebars
+  // app.get("/", function(req, res) {
+  //   db.Task.findAll({}).then(function(dbTask) {
+  //     res.render("index", {
+  //       msg: "Welcome!",
+  //       tasks: dbTask
+  //     });
+  //   });
+  // });
+
+  // Load index page without handlebars
   app.get("/", function(req, res) {
-    db.Task.findAll({}).then(function(dbTasks) {
-      res.render("index", {
-        msg: "Welcome!",
-        tasks: dbTasks
-      });
-    });
+    res.sendFile(path.join(__dirname, "../public/html/index.html"));
   });
 
   // Load example page and pass in an example by id

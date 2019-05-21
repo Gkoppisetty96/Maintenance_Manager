@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Task = sequelize.define("tasks", {
+  var Task = sequelize.define("Task", {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -34,7 +34,7 @@ module.exports = function(sequelize, DataTypes) {
     completed: {
       type: DataTypes.BOOLEAN,
       allowNull: false,
-      DEFAULTVALUE: false
+      defaultValue: false
     },
     severity: {
       type: DataTypes.INTEGER,
