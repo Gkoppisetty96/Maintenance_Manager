@@ -1,6 +1,15 @@
+/* color palette ( d > l)
+#004c4c
+#006666
+#008080
+#66b2b2
+#b2d8d8
+ */
+
 body {
     /* background-image: url("../images/plaid.png"); */
-    background-repeat: repeat;
+    /* background-repeat: repeat; */
+    background-color: #f8f8f8;
     height: 100%;
     line-height: 1.5em;
     color: #41414c;
@@ -26,19 +35,30 @@ a:hover {
 }
 
 .navbar-brand {
-    color: #006666 !important;
+    color: #66b2b2 !important;
     font-family: 'Lato', sans-serif;
     font-weight: 300;
-    font-size: 30px;
+    font-size: 30px !important;
 }
 
 .navbar-nav .nav-link {
-    color: #66b2b2;
+    color: #b2d8d8 !important;
     font-family: 'Lato', sans-serif;
     font-weight: 100;
-    font-size: 20px;
+    font-size: 20px !important;
 }
 
+.active {
+    font-weight: 300 !important;
+    text-shadow: 0 0 10px #ffffff;
+}
+
+
+.card {
+    border: 2px solid #006666;
+    text-align: center;
+    margin: 10px;
+}
 
 footer {
     position: fixed;
@@ -50,4 +70,14 @@ footer {
     height: 3em;
     padding: 1em;
     text-align: center;
+}
+
+.box-container{
+    height:200px;
+}
+
+.box-item {
+    width:90%;
+    z-index:3000;
+    margin-bottom: 5px;
 }

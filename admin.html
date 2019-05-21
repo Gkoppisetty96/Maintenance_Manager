@@ -28,10 +28,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item ">
-                    <a class="nav-link active" href="index.html">Home</a>
+                    <a class="nav-link" href="index.html">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="admin.html">Admin</a>
+                <li class="nav-item ">
+                    <a class="nav-link active" href="admin.html">Admin</a>
                 </li>
                 <!-- <li class="nav-item">
                           <a class="nav-link" href="#">  ** Github Repo ?? **</a>
@@ -46,23 +46,33 @@
     <div id="everything-container">
 
         <div class="row task-info">
+
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body open">
                         <h5 class="card-title">Open Tasks</h5>
                         <hr>
-                        <p class="card-text"> <a href="#" class="btn btn-primary btn-sm">Task A</a></p>
-                        <p class="card-text"> <a href="#" class="btn btn-primary btn-sm">Task B</a></p>
+                        <div id="container1" class="panel-btn box-container">
+                            <div itemid="itm-1" class="btn btn-primary box-item">Task
+                                A</div>
+                            <div itemid="itm-2" class="btn btn-primary box-item">Task
+                                B</div>
+                        </div>
                     </div>
                 </div>
             </div>
+
             <div class="col-sm-6">
                 <div class="card">
                     <div class="card-body closed">
                         <h5 class="card-title">Closed Tasks</h5>
                         <hr>
-                        <p class="card-text"> <a href="#" class="btn btn-primary btn-sm">Task C</a></p>
-                        <p class="card-text"> <a href="#" class="btn btn-primary btn-sm">Task D</a></p>
+                        <div id="container2" class="panel-btn box-container">
+                            <div itemid="itm-3" class="btn btn-primary box-item">Task
+                                C</div>
+                            <div itemid="itm-4" class="btn btn-primary box-item">Task
+                                D</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -71,27 +81,27 @@
         <br>
 
         <!--Breadcrumbs Of the zones that populates as the user selects options from "New Task"-->
-        <div id="taskSummary" class="taskList">
+        <!-- <div id="taskSummary" class="taskList">
             <ol class="breadcrumb">
                 <li id="zoneSummary" class="breadcrumb-item active" aria-current="page"></li>
             </ol>
         </div>
 
-        <br>
+        <br> -->
 
         <!--Dropdown Menu for Creating New Task-->
-        <div class="btn-group dropright">
+        <!-- <div class="btn-group dropright">
             <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true"
                 aria-expanded="false">
                 New Task
             </button>
 
-            <div class="dropdown-menu">
-                <!-- Dropdown menu links Go Here-->
-                <button id="eastWing" value="1" class="dropdown-item">East Wing</button>
+            <div class="dropdown-menu"> -->
+        <!-- Dropdown menu links Go Here-->
+        <!-- <button id="eastWing" value="1" class="dropdown-item">East Wing</button>
                 <button id="westWing" value="2" class="dropdown-item">West Wing</button>
             </div>
-        </div>
+        </div> -->
 
     </div>
 
@@ -113,8 +123,12 @@
     <script src="https://code.jquery.com/jquery-3.4.1.js"
         integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+
     <script type="text/javascript" src="public/js/script.js"></script>
 
+    <script type="text/javascript" src="public/js/admin.js"></script>
     <script>
         $("#eastWing").on("click", function () {
             $("#zoneSummary").append("east wing > ");
