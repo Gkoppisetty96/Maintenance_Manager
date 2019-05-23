@@ -4,9 +4,8 @@
 <head>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-        crossorigin="anonymous"></script>
+    <script src="http://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
         crossorigin="anonymous"></script>
@@ -20,17 +19,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Task Manager</title>
+    <h1>Task Manager</h1>
 </head>
-
 <!--BEGINS THE CARD FOR ACTIVE TASKS-->
 
 <body>
-
-    <h1>Task Manager</h1>
     <div class="row">
         <div class="col-sm-6">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body" id="open">
                     <h5 class="card-title">Task Title</h5>
                     <p class="card-text">Basic Task Information</p>
                     <a href="#" class="btn btn-primary">Get More Info About Task</a>
@@ -40,7 +37,7 @@
         <!--BEGINS THE CARD FOR COMPLETED TASKS-->
         <div class="col-sm-6">
             <div class="card">
-                <div class="card-body">
+                <div class="card-body" id="closed">
                     <h5 class="card-title">Task Title</h5>
                     <p class="card-text">Basic Task Information</p>
                     <a href="#" class="btn btn-primary">Get More Info About Task</a>
@@ -59,25 +56,27 @@
             New Task
         </button>
         <div class="dropdown-menu" id="wingDrop">
-            <button id="eastWing" value="1" class="dropdown-item">East Wing</button>
-            <button id="westWing" value="2" class="dropdown-item">West Wing</button>
+            <button id="eastWing" name="wing" value="East Wing" class="dropdown-item">East Wing</button>
+            <button id="westWing" name="wing" value="West Wing" class="dropdown-item">West Wing</button>
         </div>
     </div>
     <!-- DROPDONW MENU FOR AREA-->
     <div class="btn-group dropright">
         <div class="dropdown-menu" id="areaDrop">
-            <button id="bathroom" value="1" class="dropdown-item">Bathroom</button>
-            <button id="personalOffice" value="2" class="dropdown-item">Personal Office</button>
-            <button id="cubicleArea" value="3" class="dropdown-item">Cubicle Area</button>
-            <button id="lobbyOrReception" value="4" class="dropdown-item">Lobby / Reception</button>
+            <button id="bathroom" name="areaButton" value="Bathroom" class="dropdown-item">Bathroom</button>
+            <button id="personalOffice" name="areaButton" value="Personal Office" class="dropdown-item">Personal
+                Office</button>
+            <button id="cubicleArea" name="areaButton" value="Cubicle Area" class="dropdown-item">Cubicle Area</button>
+            <button id="lobbyOrReception" name="areaButton" value="Lobby or Reception" class="dropdown-item">Lobby /
+                Reception</button>
         </div>
     </div>
     <!-- DROPDONW MENU FOR issue-->
     <div class="btn-group dropright">
         <div class="dropdown-menu" id="issueDrop">
-            <button id="HVAC" value="1" class="dropdown-item">HVAC</button>
-            <button id="plumbing" value="2" class="dropdown-item">Plumbing</button>
-            <button id="electrical" value="3" class="dropdown-item">Electrical</button>
+            <button id="HVAC" name="issueButton" value="HVAC" class="dropdown-item">HVAC</button>
+            <button id="plumbing" name="issueButton" value="Plumbing" class="dropdown-item">Plumbing</button>
+            <button id="electrical" name="issueButton" value="Electrical" class="dropdown-item">Electrical</button>
         </div>
     </div>
     <!--INPUT FIELD FOR NOTES REGARDING SPECIFICATION OF ISSUE AT HAND-->
@@ -93,13 +92,16 @@
     <!--DROPDOWN MENU REGARDING SEVERITY OF ISSUE-->
     <div class="btn-group dropright">
         <div class="dropdown-menu" id="severityDrop">
-            <button id="one" value="1" class="dropdown-item">1</button>
-            <button id="two" value="2" class="dropdown-item">2</button>
-            <button id="three" value="3" class="dropdown-item">3</button>
-            <button id="four" value="4" class="dropdown-item">4</button>
-            <button id="five" value="5" class="dropdown-item">5</button>
+            <button id="one" name="severityButton" value="1" class="dropdown-item">1</button>
+            <button id="two" name="severityButton" value="2" class="dropdown-item">2</button>
+            <button id="three" name="severityButton" value="3" class="dropdown-item">3</button>
+            <button id="four" name="severityButton" value="4" class="dropdown-item">4</button>
+            <button id="five" name="severityButton" value="5" class="dropdown-item">5</button>
         </div>
     </div>
+
+    <button class="btn btn-primary" id="finalSubmit" type="submit">Button</button>
+
     <script type="text/javascript" src="/js/index-public.js"></script>
 </body>
 

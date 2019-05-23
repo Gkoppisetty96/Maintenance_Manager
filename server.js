@@ -6,14 +6,14 @@ var PORT = process.env.PORT || 8000;
 var app = express();
 var db = require("./models");
 
-require("./routes/apiRoutes")(app);
-require("./routes/htmlRoutes")(app);
-
 // app.use(methodOverride('_method'));
 
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+require("./routes/apiRoutes")(app);
+require("./routes/htmlRoutes")(app);
 
 // app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 // app.set("view engine", "handlebars");

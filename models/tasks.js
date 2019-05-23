@@ -1,14 +1,15 @@
 module.exports = function(sequelize, DataTypes) {
   var Task = sequelize.define("Task", {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true,
-      allowNull: false
-    },
+    // id: {
+    //   type: DataTypes.INTEGER,
+    //   primaryKey: true,
+    //   autoIncrement: true,
+    //   allowNull: false
+    // },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
+      // allowNull: false,
+      defaultValue: "Paige",
       len: [1, 30]
     },
     zone: {
