@@ -1,6 +1,7 @@
 $(window).on("load", function () {
     console.log("hiding area and notes");
     $("#notes").hide();
+    getTasks();
 });
 
 var newTask = {};
@@ -101,6 +102,34 @@ function severity() {
 }
 
 //SUBMITS NOTES AND CREATES ISSUE notes DROPDWON
+// function notes() {
+//     $("#submitNotes").on("click", function () {
+//         console.log("button for note");
+//         newTask["note"] = ($("#issueNotes").val());
+//         console.log(newTask);
+//         $("#wing").append($("#issueNotes").val());
+//         $("#notes").hide();
+//     })
+
+// };
+
+// $("#finalSubmit").on("click", function(event) {
+//     // Make sure to preventDefault on a submit event.
+//     console.log("button for post", newTask);
+//     event.preventDefault();
+
+//     // Send the POST request.
+//     $.post("/api/tasks/", newTask)
+//       .then(
+//       function(data) {
+//         console.log("added a task" + data);
+//         // Reload the page to get the updated list
+//         // location.reload();
+//       }
+//     );
+//   });
+
+// adds the notes and call the post function
 function notes() {
     $("#submitNotes").on("click", function () {
         console.log("button for note");
@@ -108,22 +137,37 @@ function notes() {
         console.log(newTask);
         $("#wing").append($("#issueNotes").val());
         $("#notes").hide();
+        console.log("grabbed value");
+        post();
+        getTasks();
     })
-
 };
 
-$("#finalSubmit").on("click", function(event) {
-    // Make sure to preventDefault on a submit event.
+// submits the completed newTask object to the post request
+function post() {
     console.log("button for post", newTask);
     event.preventDefault();
-
     // Send the POST request.
     $.post("/api/tasks/", newTask)
-      .then(
-      function(data) {
-        console.log("added a task" + data);
-        // Reload the page to get the updated list
-        // location.reload();
-      }
-    );
-  });
+        .then(
+            function () {
+                console.log("added a task");
+                // Reload the page to get the updated list
+                // location.reload();
+            }
+        );
+}
+
+function getTasks() {
+    $.get("/api/tasks/", function (data) {
+        for (var i = 0; i < data.length; i++) {
+            console.log(data[i].id);
+            var p = $("<p>");
+            p.addClass("taskRow");
+            p.attr("data-name", data[i].id);
+            p.text(data[i].id + " / " + data[i].name + " / " + data[i].problem + " / " + data[i].unitNumber + " / " + moment(data[i].createdAt).format("MM-DD-YY, hh:mm a"));
+            $("#open").append(p);
+            console.log("getTasks function " + data[i].id);
+        }
+    })
+};

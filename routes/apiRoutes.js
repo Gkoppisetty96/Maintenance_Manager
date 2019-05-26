@@ -13,7 +13,6 @@ module.exports = function(app) {
   app.post("/api/tasks/", function(req, res) {
     console.log(req.body)
     db.Task.create({
-      
       name: req.body.name,
       zone: req.body.zone,
       unitNumber: req.body.unitNumber,
