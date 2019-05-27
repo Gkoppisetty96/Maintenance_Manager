@@ -9,6 +9,8 @@ CREATE TABLE tasks(
 	PRIMARY KEY(id),
     name VARCHAR(30) NOT NULL,
     zone VARCHAR(20) NOT NULL,
+    department VARCHAR(30) NOT NULL,
+    room VARCHAR(30) NOT NULL,
     unitNumber VARCHAR(40),
     problem VARCHAR(25) NOT NULL,
 	note TEXT(250) NOT NULL,
