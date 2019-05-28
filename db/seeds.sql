@@ -1,2 +1,0 @@
-INSERT INTO tasks (name, zone, unitNumber, problem, note) VALUES ("Josh", "East Wing", "Mens Restroom", "Plumbing", "Sink is leaking in the East Wing Mens Bathroom");
-INSERT INTO tasks (name, zone, unitNumber, problem, note, completed) VALUES ("Paige", "West Wing", "", "Electical", "Power is out at my work Station", true)

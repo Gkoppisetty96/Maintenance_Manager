@@ -1,15 +1,9 @@
 module.exports = function(sequelize, DataTypes) {
   var Task = sequelize.define("Task", {
-    // id: {
-    //   type: DataTypes.INTEGER,
-    //   primaryKey: true,
-    //   autoIncrement: true,
-    //   allowNull: false
-    // },
     name: {
       type: DataTypes.STRING,
       // allowNull: false,
-      defaultValue: "Paige",
+      defaultValue: "Name",
       len: [1, 30]
     },
     zone: {
@@ -17,14 +11,15 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false,
       len: [1, 20]
     },
-    // room: {
-    //   type: DataTypes.STRING,
-    // },
-    unitNumber: {
+    room: {
       type: DataTypes.STRING,
-      allowNull: false,
-      len: [1, 40]
+      allowNull: false
     },
+    // unitNumber: {
+    //   type: DataTypes.STRING,
+    //   allowNull: false,
+    //   len: [1, 40]
+    // },
     problem: {
       type: DataTypes.STRING,
       allowNull: false,

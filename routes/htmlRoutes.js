@@ -17,6 +17,14 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/html/index.html"));
   });
 
+  app.get("/index", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/index.html"));
+  });
+
+  app.get("/admin", function(req, res) {
+    res.sendFile(path.join(__dirname, "../public/html/admin.html"));
+  })
+
   // Load example page and pass in an example by id
   // app.get("/task/:id", function(req, res) {
   //   db.Task.findOne({ where: { id: req.params.id } }).then(function(dbTask) {

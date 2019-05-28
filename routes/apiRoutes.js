@@ -16,6 +16,7 @@ module.exports = function(app) {
       name: req.body.name,
       zone: req.body.zone,
       unitNumber: req.body.unitNumber,
+      room: req.body.room,
       problem: req.body.problem,
       note: req.body.note,
       severity: req.body.severity
