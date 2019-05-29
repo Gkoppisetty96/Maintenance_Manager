@@ -30,7 +30,7 @@ a:hover {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 3em;
+    margin-top: 2em;
     margin-bottom: 3em;
 }
 
@@ -58,6 +58,8 @@ a:hover {
     border: 2px solid #006666;
     text-align: center;
     margin: 10px;
+    box-shadow: 2px 2px 5px #004c4c;
+    margin-bottom: 1em;
 }
 
 footer {
@@ -67,9 +69,10 @@ footer {
     width: 100%;
     background: #666666;
     color: #8d8d8d;
-    height: 3em;
-    padding: 1em;
+    height: 2em;
+    padding: .25em;
     text-align: center;
+    margin-top: 1em;
 }
 
 .box-container{
@@ -80,4 +83,54 @@ footer {
     width:90%;
     z-index:3000;
     margin-bottom: 5px;
+}
+
+.container1{
+    /* border: 10px;
+    border-color: black; */
+    margin: 5px
+}
+
+.container2{
+    /* border: 10px;
+    border-color: black; */
+    margin: 5px;
+}
+
+#newTaskDiv{
+    width: 100%;
+    margin-bottom: 1em;
+}
+
+/* background-color: rgba(206,212,218, 0.5) !important;
+    background-blend-mode: color; */
+
+
+#zoneDrop{
+    /* background-color: #006666; */
+    width: 100%;
+}
+#roomDrop{
+    /* background-color: blue; */
+    width: 100%;
+}
+#problemDrop{
+    /* background-color: red; */
+    width: 100%;
+}
+#severityDrop{
+    /* background-color: yellow; */
+    width: 100%;
+}
+#note{
+    /* background-color: purple; */
+    width: 100%;
+}
+#buttonContainerContainer{
+    width: 100%;
+    text-align: center;
+    margin-bottom: .5em;
+}
+#nameForm {
+    margin-bottom: .5em;
 }
