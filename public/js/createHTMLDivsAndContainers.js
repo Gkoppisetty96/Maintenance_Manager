@@ -28,14 +28,15 @@ var navBarCreater = () => {
         class: "navbar navbar-expand-lg navbar-dark bg-dark"
     }).appendTo("body");
     $("<a>Task Manager</a>").attr({
-        class: "navbar-brand"
+        class: "navbar-brand",
+        // href="#",
     }).appendTo(".navbar");
     $("<button>").attr({
         type: "button",
         class: "navbar-toggler",
         "data-toggle": "collapse",
-        "ata-target": "#navbarNav",
-        "aria-controls": "navbarNav",
+        "data-target": "#navbarSupportedContent",
+        "aria-controls": "navbarSupportedContent",
         "aria-expanded": "false",
         "aria-label": "Toggle navigation"
     }).appendTo(".navbar");
@@ -43,20 +44,22 @@ var navBarCreater = () => {
         class: "navbar-toggler-icon"
     }).appendTo(".navbar-toggler");
     $("<div>").attr({
-        id: "navbarNav",
+        id: "navbarSupportedContent",
         class: "collapse navbar-collapse",
     }).appendTo(".navbar");
     $("<ul>").attr({
-        class: "navbar-nav",
-    }).appendTo("#navbarNav");
+        class: "navbar-nav mr-auto",
+    }).appendTo("#navbarSupportedContent");
     $("<li>").attr({
-        id: "nav-item-index",
-        class: "nav-item",
+        class: "nav-item active",
     }).appendTo(".navbar-nav");
     $("<a>Home</a>").attr({
-        class: "nav-link active",
+        class: "nav-link",
         href: "index"
-    }).appendTo("#nav-item-index");
+    }).appendTo(".nav-item");
+    $("<span>").attr({
+        class: "sr-only"
+    }).appendTo(".nav-link")
     if (page === "admin") {
         $("<li>").attr({
             id: "nav-item-admin",
@@ -65,7 +68,10 @@ var navBarCreater = () => {
         $("<a>Admin</a>").attr({
             class: "nav-link",
             href: "admin"
-        }).appendTo("#nav-item-admin");
+        }).appendTo("#nav-item-admin")
+        $("<span>").attr({
+            class: "sr-only"
+        }).appendTo(".nav-link");
     }
 }
 

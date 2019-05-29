@@ -40,6 +40,15 @@ var createNameFormAndClickEvent = () => {
         }
         firstClick()
     });
+     //ALLOWS ENTER KEYPRESS TO SUBMIT NAME
+     $("input#problemName").keypress(function (e) {
+        var key = e.which;
+        if (key == 13)
+        {
+            $("#submitName").click();
+            return false;
+        }
+    });
 }
 
 var firstClick = () => $("input[type='button']").click(function () {
@@ -69,15 +78,30 @@ var zoneButtonClickFunction = (value) => {
     $("#notesForm").empty();
     $("#roomDrop").show();
     // $("#zoneDrop").replaceWith($("#roomDrop"));
+    // if (value === 'East Zone') {
+    //     for (var i = 0; i < eastZoneOptionsArray.length; i++) {
+    //         createButton(eastZoneOptionsArray[i]);
+    //         useThisArrayForSwitchCaseRoom.push(eastZoneOptionsArray[i]);
+    //     }
+    // } else if (value === 'West Zone') {
+    //     for (var j = 0; j < westZoneOptionsArray.length; j++) {
+    //         createButton(westZoneOptionsArray[j]);
+    //         useThisArrayForSwitchCaseRoom.push(westZoneOptionsArray[j]);
+    //     }
+    // }
     if (value === 'East Zone') {
+        useThisArrayForSwitchCaseRoom = []
         for (var i = 0; i < eastZoneOptionsArray.length; i++) {
             createButton(eastZoneOptionsArray[i]);
             useThisArrayForSwitchCaseRoom.push(eastZoneOptionsArray[i]);
+            console.log(useThisArrayForSwitchCaseRoom)
         }
     } else if (value === 'West Zone') {
+        useThisArrayForSwitchCaseRoom = []
         for (var j = 0; j < westZoneOptionsArray.length; j++) {
             createButton(westZoneOptionsArray[j]);
             useThisArrayForSwitchCaseRoom.push(westZoneOptionsArray[j]);
+            console.log(useThisArrayForSwitchCaseRoom)
         }
     }
     $("input[type='button']").click(function () {
@@ -263,6 +287,15 @@ var createNoteFormAndClickEvent = () => {
         $("#problemDrop").hide();
         $("#severityDrop").hide();
         // createNewTaskButton();
+    });
+    //ALLOWS ENTER KEYPRESS TO SUBMIT NOTES
+    $("input#problemNotes").keypress(function (e) {
+        var key = e.which;
+        if (key == 13)
+        {
+            $("#submitNotes").click();
+             return false;
+        }
     });
 }
 
