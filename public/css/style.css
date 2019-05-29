@@ -7,13 +7,10 @@
  */
 
 body {
-    /* background-image: url("../images/plaid.png"); */
-    /* background-repeat: repeat; */
     background-color: #f8f8f8;
     height: 100%;
     line-height: 1.5em;
     color: #41414c;
-    /* font-family: 'Lato', sans-serif; */
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -53,6 +50,10 @@ a:hover {
     text-shadow: 0 0 10px #ffffff;
 }
 
+#username {
+    margin-left: 5px;
+    margin-right: 5px;
+}
 
 .card {
     border: 2px solid #006666;
@@ -60,6 +61,7 @@ a:hover {
     margin: 10px;
     box-shadow: 2px 2px 5px #004c4c;
     margin-bottom: 1em;
+    overflow: auto;
 }
 
 footer {
@@ -76,7 +78,7 @@ footer {
 }
 
 .box-container{
-    height:200px;
+    min-height:200px;
 }
 
 .box-item {
@@ -85,16 +87,9 @@ footer {
     margin-bottom: 5px;
 }
 
-.container1{
-    /* border: 10px;
-    border-color: black; */
-    margin: 5px
-}
-
-.container2{
-    /* border: 10px;
-    border-color: black; */
+.container1, .container2 {
     margin: 5px;
+    overflow: auto;
 }
 
 #newTaskDiv{
@@ -102,30 +97,46 @@ footer {
     margin-bottom: 1em;
 }
 
-/* background-color: rgba(206,212,218, 0.5) !important;
-    background-blend-mode: color; */
+#zoneDrop, #departmentDrop, #roomDrop, #problemDrop, #severityDrop {
+    width: 100%;
+}
 
+#zoneDrop .btn-outline-dark:hover, #roomDrop .btn-outline-dark:hover {
+    background-color: #66b2b2;
+}
 
-#zoneDrop{
-    /* background-color: #006666; */
-    width: 100%;
+#departmentDrop .btn-outline-dark:hover, #problemDrop .btn-outline-dark:hover {
+    background-color: #008080;
 }
-#roomDrop{
-    /* background-color: blue; */
-    width: 100%;
+
+/* [id='0'].btn-outline-dark:hover {
+    background-color: ;
+}  */
+
+[id='1'].btn-outline-dark:hover {
+    background-color: #ffaaaa;
 }
-#problemDrop{
-    /* background-color: red; */
-    width: 100%;
+
+[id='2'].btn-outline-dark:hover {
+    background-color: #ff5555;
 }
-#severityDrop{
-    /* background-color: yellow; */
-    width: 100%;
+
+[id='3'].btn-outline-dark:hover {
+    background-color: #ff2a2a;
 }
-#note{
-    /* background-color: purple; */
-    width: 100%;
+
+[id='4'].btn-outline-dark:hover {
+    background-color:#aa0000;
 }
+
+[id='5'].btn-outline-dark:hover {
+    background-color: #800000;
+}
+
+input, button {
+    margin: 2px;
+}
+
 #buttonContainerContainer{
     width: 100%;
     text-align: center;

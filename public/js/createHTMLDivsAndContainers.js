@@ -190,7 +190,7 @@ var createButton = (value, area) => {
         type: 'button',
         id: value.toLowerCase(),
         value: value,
-        // class: ""
+        class: "btn btn-outline-dark"
     }).appendTo(area);
 }
 
@@ -200,7 +200,7 @@ var createSeverityDropDownMenu = function () {
             type: "button",
             id: i,
             value: i,
-            class: "text-center"
+            class: "text-center btn btn-outline-dark"
         }).appendTo("#severityDrop")
     }
 }
