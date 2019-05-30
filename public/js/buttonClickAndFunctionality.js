@@ -366,7 +366,7 @@ var getTasks = () => {
                     itemid: data[i].id,
                     class: "btn btn-danger box-item",
                 }).appendTo("#container2")
-                console.log("container2: " + itemid);
+                // console.log("container2: " + itemid);
             } else {
                 console.log("completed " + data[i].completed);
                 $("<div>" + data[i].id + " > " + data[i].name + " > " + data[i].zone + " > " + data[i].room + " > " + data[i].problem + " > " + data[i].note + " > " + data[i].severity + " > " + moment(data[i].createdAt).format("MM-DD-YY, hh:mm a") + "</div>").attr({
@@ -455,20 +455,21 @@ var droppableFunctionality = () => {
                     if ($(this).attr("itemid") === id) {
                         $(this).appendTo("#container2");
                         // updateTask();
-                        // var newStatus = {
-                        //     completed: true
-                        // };
-                        // console.log(newStatus);
-                        // console.log(id);
-                        // id = parseInt(id);
-                        // console.log(id);
+                        var newStatus = {
+                            id: id,
+                            completed: true
+                        };
+                        console.log(newStatus);
+                        console.log(id);
+                        id = parseInt(id);
+                        console.log(id);
 
-                        // $.ajax("/api/tasks/" + id, {
-                        //     type: "PUT",
-                        //     data: newStatus
-                        // })
-                        //     .then(getTasks)
-                        // console.log("task updated");
+                        $.ajax("/api/tasks/" + id, {
+                            type: "PUT",
+                            data: newStatus
+                        })
+                            .then(getTasks)
+                        console.log("task updated");
                     }
                 });
             }
