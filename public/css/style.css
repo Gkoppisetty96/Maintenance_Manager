@@ -1,0 +1,160 @@
+/* start of G stuff */
+/* color palette ( d > l)
+#004c4c
+#006666
+#008080
+#66b2b2
+#b2d8d8
+ */
+
+body {
+    /* background-image: url("../images/plaid.png"); */
+    /* background-repeat: repeat; */
+    background-color: #f8f8f8;
+    height: 100%;
+    line-height: 1.5em;
+    color: #41414c;
+    /* font-family: 'Lato', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+}
+
+a {
+    color:inherit; 
+}
+
+a:hover {
+    color:inherit;
+    text-shadow: 0 0 10px #000000;
+}
+
+#everything-container {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3em;
+    margin-bottom: 3em;
+}
+
+.navbar-brand {
+    color: #66b2b2 !important;
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 30px !important;
+}
+
+.navbar-nav .nav-link {
+    color: #b2d8d8 !important;
+    font-family: 'Lato', sans-serif;
+    font-weight: 100;
+    font-size: 20px !important;
+}
+
+.active {
+    font-weight: 300 !important;
+    text-shadow: 0 0 10px #ffffff;
+}
+
+
+.card {
+    border: 2px solid #006666;
+    text-align: center;
+    margin: 10px;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: #666666;
+    color: #8d8d8d;
+    height: 3em;
+    padding: 1em;
+    text-align: center;
+}
+
+.box-container{
+    height:200px;
+}
+
+.box-item {
+    width:90%;
+    z-index:3000;
+    margin-bottom: 5px;
+}
+/* end of G stuff */
+
+
+/* my stuff */
+.box-container {
+    height: 200px;
+}
+
+.box-item {
+    width: 100%;
+    z-index: 1000
+}
+
+.container1{
+    border: 10px;
+    border-color: black;
+}
+
+.container2{
+    border: 10px;
+    border-color: black;
+}
+
+body{
+    color: blue;
+    /* background-color: brown; */
+}
+/* 
+.center{
+    width: 25%;
+    text-align: center;
+    position: relative;
+    margin: auto;
+    left: 33%;
+}
+
+.centerAdd{
+    width: 75%;
+    text-align: center;
+    position: relative;
+    margin: auto;
+    left: 25%;
+} */
+
+#newTaskDiv{
+    width: 100%;
+}
+
+#zoneDrop{
+    background-color: #006666;
+    width: 100%;
+}
+#roomDrop{
+    background-color: blue;
+    width: 100%;
+}
+#problemDrop{
+    background-color: red;
+    width: 100%;
+}
+#severityDrop{
+    background-color: yellow;
+    width: 100%;
+}
+#note{
+    background-color: purple;
+    width: 100%;
+}
+#buttonContainerContainer{
+    width: 100%;
+}
+
+#username {
+    margin-left: 5px;
+    margin-right: 5px;
+}
