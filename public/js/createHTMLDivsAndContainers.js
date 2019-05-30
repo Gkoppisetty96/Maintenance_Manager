@@ -1,7 +1,6 @@
 // Creating buttons
 var path = window.location.pathname;
 var page = path.split("/").pop();
-console.log(page);
 
 var htmlBaseDivsCreater = () => {
     navBarCreater();
@@ -29,7 +28,6 @@ var navBarCreater = () => {
     }).appendTo("body");
     $("<a>Task Manager</a>").attr({
         class: "navbar-brand",
-        // href="#",
     }).appendTo(".navbar");
     $("<button>").attr({
         type: "button",
@@ -60,19 +58,26 @@ var navBarCreater = () => {
     $("<span>").attr({
         class: "sr-only"
     }).appendTo(".nav-link")
-    if (page === "admin") {
-        $("<li>").attr({
-            id: "nav-item-admin",
-            class: "nav-item",
-        }).appendTo(".navbar-nav");
-        $("<a>Admin</a>").attr({
-            class: "nav-link",
-            href: "admin"
-        }).appendTo("#nav-item-admin")
-        $("<span>").attr({
-            class: "sr-only"
-        }).appendTo(".nav-link");
-    }
+    $("<li>").attr({
+        id: "nav-item-admin",
+        class: "nav-item",
+    }).appendTo(".navbar-nav");
+    $("<a>Admin</a>").attr({
+        class: "nav-link active",
+    }).appendTo("#nav-item-admin");
+    // if (page === "admin") {
+    //     $("<li>").attr({
+    //         id: "nav-item-admin",
+    //         class: "nav-item",
+    //     }).appendTo(".navbar-nav");
+    //     $("<a>Admin</a>").attr({
+    //         class: "nav-link",
+    //         href: "admin"
+    //     }).appendTo("#nav-item-admin")
+    //     $("<span>").attr({
+    //         class: "sr-only"
+    //     }).appendTo(".nav-link");
+    // }
 }
 
 var containerForListOfTasksForLoopCreater = () => {

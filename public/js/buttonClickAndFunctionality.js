@@ -27,9 +27,9 @@ function submitUsernameAndPassword() {
 
         $(".navbar-nav").keypress(function (e) {
             var key = e.which;
-            if (key == 13) {
+            if (key === 13) {
                 if ($("#username").val() === "admin" && $("#password").val() === "password") {
-                    location.replace("file:///C:/Users/Joshl/Downloads/public%20(1)/public/html/admin.html");
+                    location.replace("admin");
                 }
                 else {
                     alert("The username or password you entered is incorrect.  Please try again");
@@ -60,7 +60,6 @@ var createNameFormAndClickEvent = () => {
     }).appendTo("#nameForm");
     $("#submitName").on("click", function () {
         newTask["name"] = ($("#problemName").val());
-        console.log(newTask);
         buttonContainerDivForLoopCreater();
         // $("#zoneSummary").append($("#problemNotes").val());
         // hereIsTheWholeProblemArrayStart.splice(0, 1, $("#problemName").val());
@@ -86,7 +85,6 @@ var createNameFormAndClickEvent = () => {
 
 var firstClick = () => $("input[type='button']").click(function () {
     newTask["zone"] = ($(this).val());
-    console.log(newTask);
     $("#notesForm").empty();
     switch (this.id) {
         case 'eastzone':
@@ -100,9 +98,6 @@ var firstClick = () => $("input[type='button']").click(function () {
 
 var zoneButtonClickFunction = (value) => {
     $("#zoneSummary").text(value + " > ");
-    // console.log(value)
-    // newTask["zone"] = (value);
-    // console.log(newTask);
     // hereIsTheWholeProblemArrayStart.splice(1, 1, value);
     // console.log(hereIsTheWholeProblemArrayStart)
     $("#roomDrop").empty();
@@ -139,7 +134,6 @@ var zoneButtonClickFunction = (value) => {
     }
     $("input[type='button']").click(function () {
         newTask["room"] = ($(this).val());
-        console.log(newTask);
         for (var z = 0; z < useThisArrayForSwitchCaseRoom.length; z++) {
             switch (this.id) {
                 case useThisArrayForSwitchCaseRoom[z].toLowerCase():
@@ -224,8 +218,6 @@ var zoneButtonClickFunction = (value) => {
 
 var roomButtonClickFunction = (value, array, secondArray) => {
     $("#zoneSummary").append(value + " > ");
-    // newTask["room"] = (value);
-    // console.log(newTask);
     // hereIsTheWholeProblemArrayStart.splice(2, 1, value);
     // console.log(hereIsTheWholeProblemArrayStart)
     $("#problemDrop").empty();
@@ -243,13 +235,10 @@ var roomButtonClickFunction = (value, array, secondArray) => {
     }
     $("input[type='button']").click(function () {
         newTask["problem"] = ($(this).val());
-        console.log(newTask);
         for (var x = 0; x < useThisArrayForSwitchCaseOptions.length; x++) {
             switch (this.id) {
                 case useThisArrayForSwitchCaseOptions[x].toLowerCase():
                     if (useThisArrayForSwitchCaseOptions[x].toLowerCase()) {
-                        console.log([x])
-                        console.log("taylor thinks the problem is here")
                         problemsButtonClickFunction(useThisArrayForSwitchCaseOptions[x])
                     }
                     break;
@@ -261,8 +250,6 @@ var roomButtonClickFunction = (value, array, secondArray) => {
 
 var problemsButtonClickFunction = (value) => {
     $("#zoneSummary").append(value + " > ");
-    // newTask["problem"] = (value);
-    // console.log(newTask);
     // hereIsTheWholeProblemArrayStart.splice(4, 1, value);
     // console.log(hereIsTheWholeProblemArrayStart)
     $("#severityDrop").empty();
@@ -279,7 +266,6 @@ var problemsButtonClickFunction = (value) => {
 var severityDropDownButtonClickFunction = (num) => {
     $("#zoneSummary").append(num + " > ");
     newTask["severity"] = parseInt(num);
-    console.log(newTask);
     // hereIsTheWholeProblemArrayStart.splice(5, 1, id);
     // console.log(hereIsTheWholeProblemArrayStart)
     $("#note").empty();
@@ -310,7 +296,6 @@ var createNoteFormAndClickEvent = () => {
     $("#submitNotes").on("click", function () {
         $("#zoneSummary").append($("#problemNotes").val());
         newTask["note"] = ($("#problemNotes").val());
-        console.log(newTask);
         post();
         // hereIsTheWholeProblemArrayStart.splice(6, 1, $("#problemNotes").val());
         // console.log(hereIsTheWholeProblemArrayStart);
@@ -343,77 +328,35 @@ var createNoteFormAndClickEvent = () => {
 // }
 
 var post = () => {
-    console.log("button for post", newTask);
     event.preventDefault();
     $.post("/api/tasks/", newTask)
         .then(
-            function () {
-                console.log("added a task");
-                getTasks();
-            }
+                getTasks()
         );
-}
+};
 
 var getTasks = () => {
     $.get("/api/tasks/", function (data) {
         $("#container2").empty();
         $("#container1").empty();
         for (var i = 0; i < data.length; i++) {
-            console.log(data[i].id);
             if (data[i].completed === true) {
-                console.log("completed " + data[i].completed);
                 $("<div>" + data[i].id + " - " + data[i].name + " - " + data[i].zone + " > " + data[i].room + " > " + data[i].problem + " > " + data[i].note + " > " + data[i].severity + " > " + "</div>").attr({
                     itemid: data[i].id,
                     class: "btn btn-danger box-item",
                 }).appendTo("#container2")
-                // console.log("container2: " + itemid);
             } else {
-                console.log("completed " + data[i].completed);
                 $("<div>" + data[i].id + " > " + data[i].name + " > " + data[i].zone + " > " + data[i].room + " > " + data[i].problem + " > " + data[i].note + " > " + data[i].severity + " > " + moment(data[i].createdAt).format("MM-DD-YY, hh:mm a") + "</div>").attr({
-                    // id: data[i].id,
                     itemid: data[i].id,
                     class: "btn btn-danger box-item",
                 }).appendTo("#container1")
-                // console.log("container1: " + id);
             }
-            // droppableFunctionality();
             if (page === "admin") {
                 droppableFunctionality();
             }
         }
     })
 }
-
-// var updateTask = () => {
-//     $.get("/api/tasks/", function (data) {
-//         for (var i = 0; i < data.length; i++) {
-//             id = data[i].id;
-//         }
-//         console.log(id);
-//         $.ajax("/api/tasks/" + id, {
-//             type: "PUT",
-//             data: {
-//                 completed: true
-//             }
-//         })
-            // .then(getTasks)
-        // console.log("task updated");
-        //     console.log("moving task");
-        //     var id = $(".box-item").data("itemid");
-        //     console.log(id);
-
-        //     var newStatus = {
-        //         completed: true
-        //     };
-
-        //     $.ajax("/api/tasks/" + id, {
-        //         type: "PUT",
-        //         data: newStatus
-        //     })
-        //         .then(getTasks)
-        //     console.log("task updated");
-//     })
-// };
 
 var droppableFunctionality = () => {
     $(document).ready(function () {
@@ -424,24 +367,20 @@ var droppableFunctionality = () => {
         $("#container1").droppable({
             drop: function (event, ui) {
                 var id = $(event.originalEvent.toElement).attr("itemid");
-                // id = parseInt(id);
-                console.log(id);
                 $('.box-item').each(function () {
                     if ($(this).attr("itemid") === id) {
                         $(this).appendTo("#container1");
-                        // updateTask();
-                        //     var newStatus = {
-                        //         completed: true
-                        //     };
-                        //     console.log(newStatus);
-                        //     console.log(id);
 
-                        //     $.ajax("/api/tasks/" + id, {
-                        //         type: "PUT",
-                        //         data: newStatus
-                        //     })
-                        //         .then(getTasks)
-                        //     console.log("task updated");
+                        var newStatus = {
+                            id: id,
+                            completed: false
+                        };
+
+                        $.ajax("/api/tasks/" + id, {
+                            type: "PUT",
+                            data: newStatus
+                        })
+                            .then(getTasks)
                     }
                 });
             }
@@ -449,27 +388,20 @@ var droppableFunctionality = () => {
         $("#container2").droppable({
             drop: function (event, ui) {
                 var id = $(event.originalEvent.toElement).attr("itemid");
-                // id = parseInt(id);
-                console.log(id);
                 $('.box-item').each(function () {
                     if ($(this).attr("itemid") === id) {
                         $(this).appendTo("#container2");
-                        // updateTask();
+
                         var newStatus = {
                             id: id,
                             completed: true
                         };
-                        console.log(newStatus);
-                        console.log(id);
-                        id = parseInt(id);
-                        console.log(id);
 
                         $.ajax("/api/tasks/" + id, {
                             type: "PUT",
                             data: newStatus
                         })
                             .then(getTasks)
-                        console.log("task updated");
                     }
                 });
             }
