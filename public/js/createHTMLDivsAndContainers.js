@@ -201,7 +201,7 @@ var createButton = (value, area) => {
 }
 
 var createSeverityDropDownMenu = function () {
-    for (var i = 0; i <= 5; i++) {
+    for (var i = 1; i <= 5; i++) {
         $('<input>').attr({
             type: "button",
             id: i,

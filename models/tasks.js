@@ -38,7 +38,7 @@ module.exports = function(sequelize, DataTypes) {
     severity: {
       type: DataTypes.INTEGER,
       allowNull: true,
-      validate: { min: 1, max: 10 }
+      validate: { min: 0, max: 5 }
     }
   });
   return Task;

@@ -6,6 +6,40 @@ var eastZoneOptionsArray = ["Bathroom", "LobbyOrReception", "PersonalOffice", "c
 var westZoneOptionsArray = ["Bathroom", "LobbyOrReception", "PersonalOffice", "cubicleArea", "ConferenceRoom", "OfficeArea"];
 var useThisArrayForSwitchCaseOptions = [];
 
+//ENTER USERNAME AND PASSWORD TO ACCESS ADMIN PAGE
+$('body').on('click', 'li#nav-item-admin', function () {
+    $('<input>').attr({
+        type: 'text',
+        id: "username",
+        placeholder: "Username"
+    }).appendTo(".navbar-nav");
+    $('<input>').attr({
+        type: 'password',
+        id: "password",
+        placeholder: "Password"
+    }).appendTo(".navbar-nav");
+
+    submitUsernameAndPassword();
+});
+
+function submitUsernameAndPassword() {
+    if ($("#password").val() !== null) {
+
+        $(".navbar-nav").keypress(function (e) {
+            var key = e.which;
+            if (key == 13) {
+                if ($("#username").val() === "admin" && $("#password").val() === "password") {
+                    location.replace("file:///C:/Users/Joshl/Downloads/public%20(1)/public/html/admin.html");
+                }
+                else {
+                    alert("The username or password you entered is incorrect.  Please try again");
+                }
+                return false;
+            }
+        });
+    }
+};
+
 var createNameFormAndClickEvent = () => {
     $("<form>").attr({
         id: "nameForm"
@@ -40,11 +74,10 @@ var createNameFormAndClickEvent = () => {
         }
         firstClick()
     });
-     //ALLOWS ENTER KEYPRESS TO SUBMIT NAME
-     $("input#problemName").keypress(function (e) {
+    //ALLOWS ENTER KEYPRESS TO SUBMIT NAME
+    $("input#problemName").keypress(function (e) {
         var key = e.which;
-        if (key == 13)
-        {
+        if (key == 13) {
             $("#submitName").click();
             return false;
         }
@@ -291,10 +324,9 @@ var createNoteFormAndClickEvent = () => {
     //ALLOWS ENTER KEYPRESS TO SUBMIT NOTES
     $("input#problemNotes").keypress(function (e) {
         var key = e.which;
-        if (key == 13)
-        {
+        if (key == 13) {
             $("#submitNotes").click();
-             return false;
+            return false;
         }
     });
 }
@@ -305,7 +337,7 @@ var createNoteFormAndClickEvent = () => {
 //     var totalNumberOfButtons = parseInt(numberOfButtonsInContainer1.length + numberOfButtonsInContainer2.length);
 //     var newTask = $("#zoneSummary").text();
 //     $("<div>" + newTask + "</div>").attr({
-//         itemid: "itm-" + totalNumberOfButtons + 1,
+//         itemid: " + totalNumberOfButtons + 1,
 //         class: "btn btn-danger box-item ui-draggable ui-draggable-handle"
 //     }).appendTo("#container1")    
 // }
@@ -328,23 +360,60 @@ var getTasks = () => {
         $("#container1").empty();
         for (var i = 0; i < data.length; i++) {
             console.log(data[i].id);
-            if(data[i].completed === true){
+            if (data[i].completed === true) {
                 console.log("completed " + data[i].completed);
                 $("<div>" + data[i].id + " - " + data[i].name + " - " + data[i].zone + " > " + data[i].room + " > " + data[i].problem + " > " + data[i].note + " > " + data[i].severity + " > " + "</div>").attr({
-                    itemid: "itm-"[i],
+                    itemid: data[i].id,
                     class: "btn btn-danger box-item",
                 }).appendTo("#container2")
+                console.log("container2: " + itemid);
             } else {
                 console.log("completed " + data[i].completed);
                 $("<div>" + data[i].id + " > " + data[i].name + " > " + data[i].zone + " > " + data[i].room + " > " + data[i].problem + " > " + data[i].note + " > " + data[i].severity + " > " + moment(data[i].createdAt).format("MM-DD-YY, hh:mm a") + "</div>").attr({
-                    itemid: "itm-" + [i],
+                    // id: data[i].id,
+                    itemid: data[i].id,
                     class: "btn btn-danger box-item",
                 }).appendTo("#container1")
+                // console.log("container1: " + id);
             }
-            console.log("getOpenTasks function " + data[i].id);
+            // droppableFunctionality();
+            if (page === "admin") {
+                droppableFunctionality();
+            }
         }
     })
 }
+
+// var updateTask = () => {
+//     $.get("/api/tasks/", function (data) {
+//         for (var i = 0; i < data.length; i++) {
+//             id = data[i].id;
+//         }
+//         console.log(id);
+//         $.ajax("/api/tasks/" + id, {
+//             type: "PUT",
+//             data: {
+//                 completed: true
+//             }
+//         })
+            // .then(getTasks)
+        // console.log("task updated");
+        //     console.log("moving task");
+        //     var id = $(".box-item").data("itemid");
+        //     console.log(id);
+
+        //     var newStatus = {
+        //         completed: true
+        //     };
+
+        //     $.ajax("/api/tasks/" + id, {
+        //         type: "PUT",
+        //         data: newStatus
+        //     })
+        //         .then(getTasks)
+        //     console.log("task updated");
+//     })
+// };
 
 var droppableFunctionality = () => {
     $(document).ready(function () {
@@ -354,20 +423,52 @@ var droppableFunctionality = () => {
         });
         $("#container1").droppable({
             drop: function (event, ui) {
-                var itemid = $(event.originalEvent.toElement).attr("itemid");
+                var id = $(event.originalEvent.toElement).attr("itemid");
+                // id = parseInt(id);
+                console.log(id);
                 $('.box-item').each(function () {
-                    if ($(this).attr("itemid") === itemid) {
+                    if ($(this).attr("itemid") === id) {
                         $(this).appendTo("#container1");
+                        // updateTask();
+                        //     var newStatus = {
+                        //         completed: true
+                        //     };
+                        //     console.log(newStatus);
+                        //     console.log(id);
+
+                        //     $.ajax("/api/tasks/" + id, {
+                        //         type: "PUT",
+                        //         data: newStatus
+                        //     })
+                        //         .then(getTasks)
+                        //     console.log("task updated");
                     }
                 });
             }
         });
         $("#container2").droppable({
             drop: function (event, ui) {
-                var itemid = $(event.originalEvent.toElement).attr("itemid");
+                var id = $(event.originalEvent.toElement).attr("itemid");
+                // id = parseInt(id);
+                console.log(id);
                 $('.box-item').each(function () {
-                    if ($(this).attr("itemid") === itemid) {
+                    if ($(this).attr("itemid") === id) {
                         $(this).appendTo("#container2");
+                        // updateTask();
+                        // var newStatus = {
+                        //     completed: true
+                        // };
+                        // console.log(newStatus);
+                        // console.log(id);
+                        // id = parseInt(id);
+                        // console.log(id);
+
+                        // $.ajax("/api/tasks/" + id, {
+                        //     type: "PUT",
+                        //     data: newStatus
+                        // })
+                        //     .then(getTasks)
+                        // console.log("task updated");
                     }
                 });
             }

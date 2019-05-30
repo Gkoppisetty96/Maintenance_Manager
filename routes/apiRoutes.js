@@ -9,6 +9,16 @@ module.exports = function (app) {
       });
   });
 
+  // Get one task
+  // app.get("/api/tasks/:id", function (req, res) {
+  //   db.Task.findOne({
+  //     id: req.body.id
+  //   })
+  //   .then(function (dbTask) {
+  //     res.json(dbTask);
+  //   });
+  // });
+
   // Create a new task
   app.post("/api/tasks/", function (req, res) {
     console.log(req.body)
@@ -27,10 +37,11 @@ module.exports = function (app) {
   });
 
   // Update a task to completed
-  app.put("/api/tasks/", function (req, res) {
-    db.Task.update({
-      completed: req.body.completed
-    }, {
+  app.put("/api/tasks/:id", function (req, res) {
+    db.Task.update(
+      {
+        completed: req.body.completed
+      }, {
         where: {
           id: req.body.id
         }
