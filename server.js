@@ -1,4 +1,4 @@
-// require("dotenv").config();
+require("dotenv").config();
 var express = require("express");
 // var methodOverride = require('method-override');
 // var exphbs = require("express-handlebars");
@@ -20,7 +20,7 @@ require("./routes/htmlRoutes")(app);
 
 var syncOptions = { force: false };
 
-if (process.env.NODE_ENV === "tasks") {
+if (process.env.NODE_ENV === "task") {
   syncOptions.force = true;
 }
 
