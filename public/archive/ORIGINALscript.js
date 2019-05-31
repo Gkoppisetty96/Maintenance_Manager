@@ -5,7 +5,6 @@ $(window).on("load", function () {
     getTasks();
     if (page === "index") {
         $("#newTask").on("click", function () {
-            $("#nameForm").empty();
             createNameFormAndClickEvent();
         })
     }

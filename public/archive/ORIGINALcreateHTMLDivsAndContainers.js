@@ -11,9 +11,11 @@ var htmlBaseDivsCreater = () => {
         class: "row text-center",
     }).appendTo("#everything-container");
     containerForListOfTasksForLoopCreater();
+    // buttonForTestingCreater();
     if (page === "index") {
         taskSummaryAndBreadCrumbCreater();
         newTaskButtonOnHTMLNoMySQLFunctionalityCreater();
+        // buttonContainerDivForLoopCreater();
     } else if (page === "admin") {
         droppableFunctionality();
     }
@@ -24,7 +26,7 @@ var navBarCreater = () => {
     $("<nav>").attr({
         class: "navbar navbar-expand-lg navbar-dark bg-dark"
     }).appendTo("body");
-    $("<a>Maintenance Manager</a>").attr({
+    $("<a>Task Manager</a>").attr({
         class: "navbar-brand",
     }).appendTo(".navbar");
     $("<button>").attr({
@@ -62,7 +64,20 @@ var navBarCreater = () => {
     }).appendTo(".navbar-nav");
     $("<a>Admin</a>").attr({
         class: "nav-link active",
-    }).appendTo("#nav-item-admin")
+    }).appendTo("#nav-item-admin");
+    // if (page === "admin") {
+    //     $("<li>").attr({
+    //         id: "nav-item-admin",
+    //         class: "nav-item",
+    //     }).appendTo(".navbar-nav");
+    //     $("<a>Admin</a>").attr({
+    //         class: "nav-link",
+    //         href: "admin"
+    //     }).appendTo("#nav-item-admin")
+    //     $("<span>").attr({
+    //         class: "sr-only"
+    //     }).appendTo(".nav-link");
+    // }
 }
 
 var containerForListOfTasksForLoopCreater = () => {
@@ -77,10 +92,11 @@ var containerForListOfTasksForLoopCreater = () => {
             class: "card",
         }).appendTo("#container" + h + "Div");
         if (taskStatusArray[h] === "open") {
+            // console.log(taskStatusArray[h]);
             $("<div>").attr({
                 class: "card-body " + taskStatusArray[h],
             }).appendTo("#container" + h + "Card");
-            $("<h5>Pending Requests</p>").attr({
+            $("<h5>Pending Tasks</p>").attr({
                 class: "card-title",
             }).appendTo("." + taskStatusArray[h]);
             $("<p>These tasks have been recieved</p>").attr({
@@ -91,10 +107,11 @@ var containerForListOfTasksForLoopCreater = () => {
                 class: "panel-body box-container"
             }).appendTo("." + taskStatusArray[h]);
         } else if (taskStatusArray[h] === "closed") {
+            // console.log(taskStatusArray[h]);
             $("<div>").attr({
                 class: "card-body " + taskStatusArray[h],
             }).appendTo("#container" + h + "Card");
-            $("<h5>Completed Requests</p>").attr({
+            $("<h5>Completed Tasks</p>").attr({
                 class: "card-title",
             }).appendTo("." + taskStatusArray[h]);
             $("<p>These tasks have been resolved</p>").attr({
@@ -108,21 +125,21 @@ var containerForListOfTasksForLoopCreater = () => {
     }
 }
 
-var buttonForTestingCreater = () => {
-    for (var q = 1; q <= 8; q++) {
-        if (q <= 4) {
-            $("<div>Item " + [q] + "</div>").attr({
-                itemid: "itm-" + [q],
-                class: "btn btn-danger box-item",
-            }).appendTo("#container1")
-        } else {
-            $("<div>Item " + [q] + "</div>").attr({
-                itemid: "itm-" + [q],
-                class: "btn btn-danger box-item",
-            }).appendTo("#container2");
-        }
-    }
-}
+// var buttonForTestingCreater = () => {
+//     for (var q = 1; q <= 8; q++) {
+//         if (q <= 4) {
+//             $("<div>Item " + [q] + "</div>").attr({
+//                 itemid: "itm-" + [q],
+//                 class: "btn btn-danger box-item",
+//             }).appendTo("#container1")
+//         } else {
+//             $("<div>Item " + [q] + "</div>").attr({
+//                 itemid: "itm-" + [q],
+//                 class: "btn btn-danger box-item",
+//             }).appendTo("#container2");
+//         }
+//     }
+// }
 
 var taskSummaryAndBreadCrumbCreater = () => {
     $("<div>").attr({
@@ -132,7 +149,7 @@ var taskSummaryAndBreadCrumbCreater = () => {
     $("<ol>").attr({
         class: "breadcrumb pagination-centered"
     }).appendTo(".taskList");
-    $("<li>Create New Request Below</li>").attr({
+    $("<li>Create New Task Below</li>").attr({
         id: "zoneSummary",
         class: "breadcrumb-item active pagination-centered",
         "aria-current": "page",
@@ -144,10 +161,11 @@ var newTaskButtonOnHTMLNoMySQLFunctionalityCreater = () => {
         id: "newTaskDiv",
         class: "center btn-group dropright",
     }).appendTo("#everything-container");
-    $("<button>New Request</button>").attr({
+    $("<button>New Task</button>").attr({
         type: "button",
         id: "newTask",
-        class: "center btn btn-secondary",
+        class: "center btn btn-secondary dropdown-toggle",
+        "data-toggle": "dropdown",
         "aria-haspopup": "true",
         "aria-expanded": "false",
     }).appendTo("#newTaskDiv")
@@ -159,8 +177,10 @@ var buttonContainerDivForLoopCreater = () => {
         $("<div>").attr({
             id: "buttonContainerContainer",
             class: "btn-group " + [p],
+            // "x-placement": "right-start"
         }).appendTo("#everything-container");
         $("<div>").attr({
+            // class: "",
             id: divCreaterArray[p]
         }).appendTo("." + [p])
     }
@@ -181,7 +201,7 @@ var createButton = (value, area) => {
         type: 'button',
         id: value.toLowerCase(),
         value: value,
-        class: "btn btn-outline-dark"
+        // class: ""
     }).appendTo(area);
 }
 
@@ -191,7 +211,7 @@ var createSeverityDropDownMenu = function () {
             type: "button",
             id: i,
             value: i,
-            class: "text-center severity-button"
+            class: "text-center"
         }).appendTo("#severityDrop")
     }
 }

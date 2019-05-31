@@ -15,11 +15,10 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     },
-    // unitNumber: {
-    //   type: DataTypes.STRING,
-    //   allowNull: false,
-    //   len: [1, 40]
-    // },
+    department: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     problem: {
       type: DataTypes.STRING,
       allowNull: false,

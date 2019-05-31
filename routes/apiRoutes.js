@@ -15,8 +15,8 @@ module.exports = function (app) {
     db.Task.create({
       name: req.body.name,
       zone: req.body.zone,
-      unitNumber: req.body.unitNumber,
       room: req.body.room,
+      department: req.body.department,
       problem: req.body.problem,
       note: req.body.note,
       severity: req.body.severity
