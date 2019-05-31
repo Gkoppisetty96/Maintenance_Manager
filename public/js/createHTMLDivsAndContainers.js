@@ -11,7 +11,7 @@ var htmlBaseDivsCreater = () => {
         class: "row text-center",
     }).appendTo("#everything-container");
     containerForListOfTasksForLoopCreater();
-    if (page === "index") {
+    if (page === "index" || path === "/") {
         taskSummaryAndBreadCrumbCreater();
         newTaskButtonOnHTMLNoMySQLFunctionalityCreater();
     } else if (page === "admin") {
@@ -191,7 +191,7 @@ var createSeverityDropDownMenu = function () {
             type: "button",
             id: i,
             value: i,
-            class: "text-center severity-button"
+            class: "text-center severity-button btn btn-outline-dark"
         }).appendTo("#severityDrop")
     }
 }

@@ -1,6 +1,6 @@
 var array = [];
 var newTask = {};
-var hereIsTheWholeProblemArrayStart = ["zone", "department", "room", "probelm", "severity"];
+var hereIsTheWholeProblemArrayStart = ["zone", "department", "room", "problem", "severity"];
 var useThisArrayForSwitchCaseZone = [];
 var useThisArrayForSwitchCaseDepartment = [];
 var eastZoneOptionsArray = ["Purchasing", "Accounting", "Other Rooms"];
@@ -106,7 +106,7 @@ var zoneButtonClickFunction = (value) => {
     hereIsTheWholeProblemArrayStart.splice(0, 1, value);
     hereIsTheWholeProblemArrayStart.splice(1, 1, "department");
     hereIsTheWholeProblemArrayStart.splice(2, 1, "room");
-    hereIsTheWholeProblemArrayStart.splice(3, 1, "probelm");
+    hereIsTheWholeProblemArrayStart.splice(3, 1, "problem");
     hereIsTheWholeProblemArrayStart.splice(4, 1, "severity");
     $("#zoneSummary").text(hereIsTheWholeProblemArrayStart.join(" - "));
     $("#roomDrop").empty();
@@ -155,7 +155,7 @@ var departmentButtonClickFunction = (value, array, secondArray) => {
     newTask["department"] = (value);
     hereIsTheWholeProblemArrayStart.splice(1, 1, value);
     hereIsTheWholeProblemArrayStart.splice(2, 1, "room");
-    hereIsTheWholeProblemArrayStart.splice(3, 1, "probelm");
+    hereIsTheWholeProblemArrayStart.splice(3, 1, "problem");
     hereIsTheWholeProblemArrayStart.splice(4, 1, "severity");
     $("#zoneSummary").text(hereIsTheWholeProblemArrayStart.join(" - "));
     $("#roomDrop").empty();
@@ -202,7 +202,7 @@ var departmentButtonClickFunction = (value, array, secondArray) => {
 var roomButtonClickFunction = (value, array, secondArray) => {
     newTask["room"] = (value);
     hereIsTheWholeProblemArrayStart.splice(2, 1, value);
-    hereIsTheWholeProblemArrayStart.splice(3, 1, "probelm");
+    hereIsTheWholeProblemArrayStart.splice(3, 1, "problem");
     hereIsTheWholeProblemArrayStart.splice(4, 1, "severity");
     $("#zoneSummary").text((hereIsTheWholeProblemArrayStart.join(" - ")));
     $("#problemDrop").empty();
@@ -268,7 +268,7 @@ var createNoteFormAndClickEvent = () => {
     $('<input>').attr({
         type: 'text',
         id: "problemNotes",
-        class: "form-control text-left",
+        class: "form-control",
         placeholder: "Example input"
     }).appendTo("#notesForm");
     $("<button>Submit Notes</button>").attr({
