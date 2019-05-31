@@ -305,6 +305,8 @@ var createNoteFormAndClickEvent = () => {
         $("#problemDrop").hide();
         $("#severityDrop").hide();
         // createNewTaskButton();
+        window.location.reload(true);
+        // firstClick();
     });
     //ALLOWS ENTER KEYPRESS TO SUBMIT NOTES
     $("input#problemNotes").keypress(function (e) {
@@ -341,12 +343,12 @@ var getTasks = () => {
         $("#container1").empty();
         for (var i = 0; i < data.length; i++) {
             if (data[i].completed === true) {
-                $("<div>" + data[i].id + " - " + data[i].name + " - " + data[i].zone + " > " + data[i].room + " > " + data[i].problem + " > " + data[i].note + " > " + data[i].severity + " > " + "</div>").attr({
+                $("<div>" + data[i].name + " - " + data[i].zone + " - " + data[i].room + " - " + data[i].problem + " - " + data[i].note + " - " + data[i].severity + " - " + moment(data[i].updatedAt).format("MM-DD-YY, hh:mm a") + "</div>").attr({
                     itemid: data[i].id,
                     class: "btn btn-danger box-item",
                 }).appendTo("#container2")
             } else {
-                $("<div>" + data[i].id + " > " + data[i].name + " > " + data[i].zone + " > " + data[i].room + " > " + data[i].problem + " > " + data[i].note + " > " + data[i].severity + " > " + moment(data[i].createdAt).format("MM-DD-YY, hh:mm a") + "</div>").attr({
+                $("<div>" + data[i].name + " - " + data[i].zone + " - " + data[i].room + " - " + data[i].problem + " - " + data[i].note + " - " + data[i].severity + " - " + moment(data[i].createdAt).format("MM-DD-YY, hh:mm a") + "</div>").attr({
                     itemid: data[i].id,
                     class: "btn btn-danger box-item",
                 }).appendTo("#container1")

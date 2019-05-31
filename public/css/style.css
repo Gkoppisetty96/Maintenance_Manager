@@ -1,20 +1,7 @@
-/* start of G stuff */
-/* color palette ( d > l)
-#004c4c
-#006666
-#008080
-#66b2b2
-#b2d8d8
- */
-
 body {
-    /* background-image: url("../images/plaid.png"); */
-    /* background-repeat: repeat; */
     background-color: #f8f8f8;
-    height: 100%;
     line-height: 1.5em;
     color: #41414c;
-    /* font-family: 'Lato', sans-serif; */
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -31,7 +18,7 @@ a:hover {
     width: 80%;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 3em;
+    margin-top: 2em;
     margin-bottom: 3em;
 }
 
@@ -54,11 +41,17 @@ a:hover {
     text-shadow: 0 0 10px #ffffff;
 }
 
+#username {
+    margin-left: 5px;
+    margin-right: 5px;
+}
 
 .card {
     border: 2px solid #006666;
     text-align: center;
     margin: 10px;
+    box-shadow: 2px 2px 5px #004c4c;
+    margin-bottom: 1em;
 }
 
 footer {
@@ -68,13 +61,14 @@ footer {
     width: 100%;
     background: #666666;
     color: #8d8d8d;
-    height: 3em;
-    padding: 1em;
+    height: 2em;
+    padding: .25em;
     text-align: center;
+    margin-top: 1em;
 }
 
 .box-container{
-    height:200px;
+    min-height:200px;
 }
 
 .box-item {
@@ -82,75 +76,61 @@ footer {
     z-index:3000;
     margin-bottom: 5px;
 }
-/* end of G stuff */
 
-
-/* my stuff */
-.box-container {
-    height: 200px;
+.container1, .container2 {
+    margin: 5px;
 }
-
-.box-item {
-    width: 100%;
-    z-index: 1000
-}
-
-.container1{
-    border: 10px;
-    border-color: black;
-}
-
-.container2{
-    border: 10px;
-    border-color: black;
-}
-
-body{
-    color: blue;
-    /* background-color: brown; */
-}
-/* 
-.center{
-    width: 25%;
-    text-align: center;
-    position: relative;
-    margin: auto;
-    left: 33%;
-}
-
-.centerAdd{
-    width: 75%;
-    text-align: center;
-    position: relative;
-    margin: auto;
-    left: 25%;
-} */
 
 #newTaskDiv{
     width: 100%;
+    margin-bottom: 1em;
 }
 
-#zoneDrop{
-    background-color: #006666;
+#zoneDrop, #departmentDrop, #roomDrop, #problemDrop, #severityDrop {
     width: 100%;
 }
-#roomDrop{
-    background-color: blue;
-    width: 100%;
+
+#zoneDrop .btn-outline-dark:hover, #roomDrop .btn-outline-dark:hover {
+    background-color: #66b2b2;
 }
-#problemDrop{
-    background-color: red;
-    width: 100%;
+
+#departmentDrop .btn-outline-dark:hover, #problemDrop .btn-outline-dark:hover {
+    background-color: #008080;
 }
-#severityDrop{
-    background-color: yellow;
-    width: 100%;
+
+/* [id='0'].btn-outline-dark:hover {
+    background-color: ;
+}  */
+
+[id='1'].btn-outline-dark:hover {
+    background-color: #ffaaaa;
 }
-#note{
-    background-color: purple;
-    width: 100%;
+
+[id='2'].btn-outline-dark:hover {
+    background-color: #ff5555;
 }
+
+[id='3'].btn-outline-dark:hover {
+    background-color: #ff2a2a;
+}
+
+[id='4'].btn-outline-dark:hover {
+    background-color:#aa0000;
+}
+
+[id='5'].btn-outline-dark:hover {
+    background-color: #800000;
+}
+
+input, button {
+    margin: 2px;
+}
+
 #buttonContainerContainer{
     width: 100%;
+    text-align: center;
+    margin-bottom: .5em;
 }
-
+#nameForm {
+    margin-bottom: .5em;
+}
