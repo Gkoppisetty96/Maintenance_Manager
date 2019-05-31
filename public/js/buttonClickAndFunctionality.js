@@ -6,6 +6,7 @@ var eastZoneOptionsArray = ["Bathroom", "LobbyOrReception", "PersonalOffice", "c
 var westZoneOptionsArray = ["Bathroom", "LobbyOrReception", "PersonalOffice", "cubicleArea", "ConferenceRoom", "OfficeArea"];
 var useThisArrayForSwitchCaseOptions = [];
 var breadCrumbArray = [];
+var notesBoolean = false;
 
 //ENTER USERNAME AND PASSWORD TO ACCESS ADMIN PAGE
 $('body').on('click', 'li#nav-item-admin', function () {
@@ -107,6 +108,7 @@ var firstClick = () => $("input[type='button']").click(function () {
 
 var zoneButtonClickFunction = (value) => {
 
+    notesBoolean = false;
 
     $("#zoneSummary").text(value + " > ");
     newTask["zone"] = (value);
@@ -222,6 +224,7 @@ var zoneButtonClickFunction = (value) => {
 // }
 
 var roomButtonClickFunction = (value, array, secondArray) => {
+    notesBoolean = false;
     $("#zoneSummary").append(value + " > ");
     newTask["room"] = (value);
     // console.log(newTask);
@@ -257,19 +260,19 @@ var roomButtonClickFunction = (value, array, secondArray) => {
 }
 
 var problemsButtonClickFunction = (value) => {
+    notesBoolean = true;
     $("#zoneSummary").append(value + " > ");
     newTask["problem"] = (value);
-    // console.log(newTask);
     hereIsTheWholeProblemArrayStart.splice(4, 1, value);
-    // console.log(hereIsTheWholeProblemArrayStart)
     $("#severityDrop").empty();
     $("#note").empty();
     $("#severityDrop").show();
     $("#notesForm").empty();
-    // $("#problemDrop").replaceWith($("#severityDrop"));
     createSeverityDropDownMenu()
     $("input[type='button']").click(function () {
+        if (notesBoolean===true){
         severityDropDownButtonClickFunction(this.id);
+        }
     });;
 }
 
