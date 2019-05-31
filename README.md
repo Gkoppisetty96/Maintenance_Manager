@@ -14,7 +14,10 @@ USER EXPERIENCE
 ---------------
 
     -STANDARD USER
-        Anyone with access to Maintenance Manager has the ability to create a new task.  Upon opening of the app, the user can see all pending and completed issues before adding a new one.  This level of visibilty was intended to reduce duplicate entries.  If the user wishes to create a new task, they click the "New Task" button located at the bottom of the page.  The proceeding task creation process is as follows:
+        Anyone with access to Maintenance Manager has the ability to create a new task.  Upon opening of the app, 
+        the user can see all pending and completed issues before adding a new one.  This level of visibilty was 
+        intended to reduce duplicate entries.  If the user wishes to create a new task, they click the "New Task" 
+        button located at the bottom of the page.  The proceeding task creation process is as follows:
             
             -Enters name in input field and clicks "Confirm Your Name"
                 -(If no name is entered an error message is displayed)
@@ -28,22 +31,37 @@ USER EXPERIENCE
                 -(Max 250 characters)
             -Clicks "Submit Notes"
     
-        After the user clicks "Submit Notes" the issue is created and appears in the "pending" area.  The user also has the ability to move back to a previous step in the issue creation process, if they believe they made an error by reclicking the correct button.  The use of a breadcrumb text system (located above issue creation area) updates after each selection, and was intended to log the issue as the user works their way through creation.  Adding any additional issues completed by repeating the same steps as mentioned above.
+        After the user clicks "Submit Notes" the issue is created and appears in the "pending" area.  The user also 
+        has the ability to move back to a previous step in the issue creation process, if they believe they made 
+        an error by reclicking the correct button.  The use of a breadcrumb text system (located above issue creation area) 
+        updates after each selection, and was intended to log the issue as the user works their way through creation.  
+        Adding any additional issues completed by repeating the same steps as mentioned above.
 
     -ADMINISTRATOR
-        To access the administrator page of the application, click the "Admin" button on the Navbar.  This will open username and password input fields.  If the username and password are incorrect, an error alert will appear.  If correct credentials are inserted, pressing the Enter key will relocate to the administrator page.  The administrator has all of the same functionality as the standard user, with the addition of moving issues to "completed", once the physical issue is resolved.  This is accomplished by using "drag and drop" functionality, grabbing the desired issue and moving the issue to the "completed" section, and dropping it in.  Upon entry to the completed section, the issue will change from red to green, also signifying it's completion.  If the Administrator grabbed the wrong issue, it can easily be dragged back to the pending section.
+        To access the administrator page of the application, click the "Admin" button on the Navbar.  This will open 
+        username and password input fields.  If the username and password are incorrect, an error alert will appear.  
+        If correct credentials are inserted, pressing the Enter key will relocate to the administrator page.  The 
+        administrator has all of the same functionality as the standard user, with the addition of moving issues to 
+        "completed", once the physical issue is resolved.  This is accomplished by using "drag and drop" functionality, 
+        grabbing the desired issue and moving the issue to the "completed" section, and dropping it in.  Upon entry to 
+        the completed section, the issue will change from red to green, also signifying it's completion.  If the Administrator 
+        grabbed the wrong issue, it can easily be dragged back to the pending section.
 
 
 -----------------------------------
 MAJOR CHALLENGES DURING DEVELOPMENT
 -----------------------------------
-    - Creating the original JavaScript object for each task.  Getting the data from each button click, and using that to create an object was our first real challenge.
+    - Creating the original JavaScript object for each task.  Getting the data from each button click, and using that to 
+    create an object was our first real challenge.
 
     -Posting the data to MYSQL and GETting it to display correctly on the DOM
 
-    - Add or remove things DOM elements freely.  "Hiding" and "Showing" already existing HTML elements, was not the best way to do this. Creating everything dynamically seemed like our best option, due to constantly changing data.
+    - Add or remove things DOM elements freely.  "Hiding" and "Showing" already existing HTML elements, was not the 
+    best way to do this. Creating everything dynamically seemed like our best option, due to constantly changing data.
 
-    - Switching to a fully dynamic app was a challenge in itself.  Issues included duplication of buttons on multiple clicks, breadcrumb duplication, necessity to double click buttons before event firing, etc.  After these issues were resolved, dynamic elements provide a more robust user experience.
+    - Switching to a fully dynamic app was a challenge in itself.  Issues included duplication of buttons on multiple 
+    clicks, breadcrumb duplication, necessity to double click buttons before event firing, etc.  After these issues 
+    were resolved, dynamic elements provide a more robust user experience.
 
     -Drag and drop functionality
 
