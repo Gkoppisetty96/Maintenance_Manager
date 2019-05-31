@@ -1,7 +1,7 @@
 {
   "name": "project2",
   "version": "1.0.0",
-  "description": "# Project Requirements",
+  "description": "Maintenance Manager",
   "main": "server.js",
   "scripts": {
     "test": "",
@@ -18,9 +18,11 @@
   },
   "homepage": "https://github.com/Gkoppisetty96/Project2#readme",
   "dependencies": {
+    "dotenv": "^8.0.0",
     "express": "^4.16.4",
     "express-handlebars": "^3.1.0",
     "method-override": "^3.0.0",
+    "moment": "^2.24.0",
     "mysql2": "^1.6.5",
     "sequelize": "^5.8.6"
   }
