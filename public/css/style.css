@@ -98,10 +98,6 @@ footer {
     background-color: #008080;
 }
 
-/* [id='0'].btn-outline-dark:hover {
-    background-color: ;
-}  */
-
 [id='1'].btn-outline-dark:hover {
     background-color: #ffaaaa;
 }
@@ -131,6 +127,11 @@ input, button {
     text-align: center;
     margin-bottom: .5em;
 }
+
 #nameForm {
     margin-bottom: .5em;
+}
+
+#note {
+    width: 100% !important;
 }
