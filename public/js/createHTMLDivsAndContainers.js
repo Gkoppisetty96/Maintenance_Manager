@@ -168,7 +168,7 @@ var buttonContainerDivForLoopCreater = () => {
 
 var footerCreater = () => {
     $("<footer>").appendTo("body");
-    $("<span>Copyright &copy; 2019 | **github repo link goes here **</span>").attr({
+    $("<span>Copyright &copy; 2019 | <a href='https://github.com/Gkoppisetty96/Maintenance_Manager' alt='github repo'>Github Repo</a>  </span>").attr({
         id: "footer-info"
     }).appendTo("footer")
 }
