@@ -93,7 +93,7 @@ VISION FOR THE FUTUER OF MAINTENANCE MANAGER
 AUTHORS
 -------
 
-Geethika Koppisetty (https://github.com/gkoppisetty96)
-Josh Eshleman (https://github.com/Joshleman10)
-Paige Lieske (https://github.com/paigelieske)
+Geethika Koppisetty (https://github.com/gkoppisetty96)  
+Josh Eshleman (https://github.com/Joshleman10)  
+Paige Lieske (https://github.com/paigelieske)  
 Taylor McGlothlin (https://github.com/tayler176)
