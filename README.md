@@ -73,7 +73,7 @@ MAJOR CHALLENGES DURING DEVELOPMENT
 
 
 --------------------------------------------
-VISION FOR THE FUTUER OF MAINTENANCE MANAGER
+VISION FOR THE FUTURE OF MAINTENANCE MANAGER
 --------------------------------------------
   Coming soon to maintenance manager:
 
