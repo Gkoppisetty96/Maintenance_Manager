@@ -79,6 +79,8 @@ VISION FOR THE FUTUER OF MAINTENANCE MANAGER
 
     -Add a delete issue option
 
-    -On more sever issues (4 or 5 on severity scale), auto-send email to desired recipient
+    -On more severe issues (4 or 5 on severity scale), auto-send email to desired recipient and are moved to the top of "pending"
 
     -Sort all issues by time added/time completed
+    
+    -Admin has the capabliltiy to downgrade severity
